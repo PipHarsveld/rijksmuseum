@@ -1,24 +1,128 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --color-bookcase: rgba(122, 60, 38, 0.704);
     --color-book1: hotpink;
     --color-book2: cornflowerblue;
     --color-book3: darksalmon;
     --color-book4: mediumpurple;
+    --color-book4d: rgb(130, 80, 230);
     --color-book5: mediumSeaGreen;
 }
 
-h1{
+/* h1{
     padding: .5rem;
     background-color: var(--color-book4);
+    border: .5rem solid var(--color-book4d);
+    border-radius: .5rem;
+} */
+
+
+
+.book1>h1 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
-main{
+.book1 {
+    position: relative;
+    height: 40px;
+    width: 200px;
+    margin-left: 39vw;
+    margin-bottom: 3px;
+    background: #fcc800;
+}
+
+.book1:before {
+    height: 40px;
+    width: 98px;
+    left: 10px;
+    border-left: 20px double #fff;
+    position: absolute;
+    content: '';
+}
+
+.book2 {
+    position: relative;
+    height: 40px;
+    width: 145px;
+    margin-left: 41.5vw;
+    background: #0073a8;
+}
+
+.book2>p {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.book2:before {
+    height: 40px;
+    width: 80px;
+    left: 12px;
+    border-left: 20px double #fff;
+    border-right: 20px double #fff;
+    position: absolute;
+    content: '';
+}
+
+.book3>p {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.book3 {
+    position: relative;
+    height: 40px;
+    width: 120px;
+    margin-left: 43vw;
+    background: #a688bd;
+}
+
+.book3:before {
+    height: 40px;
+    width: 60px;
+    left: 10px;
+    border-left: 20px double #fff;
+    border-right: 20px double #fff;
+    position: absolute;
+    content: '';
+}
+
+.book4 {
+    position: relative;
+    height: 30px;
+    width: 140px;
+    border: 5px solid #942343;
+    margin-left: 42vw;
+    border-radius: 10px 0 0 10px;
+    border-right-style: none;
+    background: #fffff0;
+}
+
+.bookCut {
+    background: #a0d8ef;
+    margin: 0 0 0 97%;
+    width: 5px;
+    height: 30px;
+}
+
+
+
+
+main {
     background-color: var(--color-bookcase);
     width: 22rem;
     height: 40rem;
@@ -32,36 +136,36 @@ main{
     flex-direction: column;
 }
 
-main>section{
+main>section {
     background-color: white;
     margin: .7rem 1.4rem;
     height: 100%;
 }
 
-main>section:first-of-type{
+main>section:first-of-type {
     margin-top: 1.4rem;
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
 }
 
-main>section:first-of-type>img{
+main>section:first-of-type>img {
     height: 5rem;
 }
 
-main>section:last-of-type{
+main>section:last-of-type {
     margin-bottom: 1.4rem;
 }
 
-main>section:first-of-type>section>p:first-of-type{
+main>section:first-of-type>section>p:first-of-type {
     background-color: var(--color-book2);
 }
 
-main>section:first-of-type>section>p:nth-of-type(2){
+main>section:first-of-type>section>p:nth-of-type(2) {
     background-color: var(--color-book1);
 }
 
 
-main>section:nth-of-type(3)>section>img{
+main>section:nth-of-type(3)>section>img {
     height: 5rem;
 }
