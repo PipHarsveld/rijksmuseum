@@ -14,110 +14,131 @@
     --color-book5: mediumSeaGreen;
 }
 
-/* h1{
-    padding: .5rem;
-    background-color: var(--color-book4);
-    border: .5rem solid var(--color-book4d);
-    border-radius: .5rem;
-} */
 
+*,
+*::before,
+*::after {
+    margin: 0;
+    box-sizing: border-box;
+}
 
-
-.book1>h1 {
+*::before,
+*::after {
+    content: "";
     display: flex;
-    text-align: center;
-    justify-content: center;
+}
+
+h1 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+section>section {
+    display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section:first-of-type>section>div {
+    height: 22px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+}
+
+section:nth-of-type(2){
+    display: flex;
+    align-items: flex-end;
+
+}
+
+section:nth-of-type(2)>section{
+    width: 2rem;
+    flex-direction: row;
     height: 100%;
+    margin-left: auto;
+    width: 9rem;
+    gap: 0.5rem;
+}
+
+section:nth-of-type(2)>section>div{
+    background-color: hotpink;
+    height: 100%;
+}
+
+section:nth-of-type(2)>section>div>p{
+    writing-mode: vertical-rl;
 }
 
 .book1 {
-    position: relative;
-    height: 40px;
-    width: 200px;
-    margin-left: 39vw;
-    margin-bottom: 3px;
-    background: #fcc800;
+    height: 17.6px;
+    width: 80px;
+    background-color: #aa90e7;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    margin-left: -5px;
 }
 
-.book1:before {
-    height: 40px;
-    width: 98px;
-    left: 10px;
-    border-left: 20px double #fff;
-    position: absolute;
-    content: '';
+.book1::after {
+    height: 11px;
+    width: 150px;
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    margin-left: 4%;
+    background-image: repeating-linear-gradient(#fffefa 0 2.5px, lightgray 2.5px 4px);
 }
 
 .book2 {
+    background-color: #5796e9;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    margin-right: 10px;
     position: relative;
-    height: 40px;
-    width: 145px;
-    margin-left: 41.5vw;
-    background: #0073a8;
+    z-index: 4;
 }
 
-.book2>p {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.book2:before {
-    height: 40px;
-    width: 80px;
-    left: 12px;
-    border-left: 20px double #fff;
-    border-right: 20px double #fff;
+.book2::before {
+    margin-right: 50%;
+    height: 8.8px;
     position: absolute;
-    content: '';
+    border-left: 4px solid #98f8db;
+    border-right: 4px solid #78ddbf;
+    border-bottom: 4px solid transparent;
 }
 
-.book3>p {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+.book2::after {
+    background-image: repeating-linear-gradient(#fffefa 0 3px, lightgray 3px 4.5px);
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    height: 16.5px;
+    width: 99px;
+    margin-left: 3%;
 }
 
 .book3 {
-    position: relative;
-    height: 40px;
-    width: 120px;
-    margin-left: 43vw;
-    background: #a688bd;
-}
-
-.book3:before {
-    height: 40px;
-    width: 60px;
-    left: 10px;
-    border-left: 20px double #fff;
-    border-right: 20px double #fff;
-    position: absolute;
-    content: '';
+    margin-left: 8px;
+    width: 110px;
+    justify-content: space-around;
+    background-image: linear-gradient(#ffd8a6 0 60%, #ffc27c 60% 40%);
 }
 
 .book4 {
     position: relative;
-    height: 30px;
-    width: 140px;
-    border: 5px solid #942343;
-    margin-left: 42vw;
-    border-radius: 10px 0 0 10px;
-    border-right-style: none;
-    background: #fffff0;
+    z-index: 2;
+    width: 120px;
+    height: 25.3px;
+    background-image: linear-gradient(#ffe6e6 0 60%, #fdcccc 60% 100%);
 }
 
-.bookCut {
-    background: #a0d8ef;
-    margin: 0 0 0 97%;
-    width: 5px;
-    height: 30px;
+.book5 {
+    width: 140px;
+    height: 26.4px;
+    background-image: linear-gradient(#92c1ff 0 60%, #5796e9 60% 100%);
 }
+
 
 
 
