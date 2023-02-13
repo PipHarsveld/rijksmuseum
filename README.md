@@ -1,31 +1,51 @@
-# Web App From Scratch @cmda-minor-web 2021 - 2022
+# :art:Rijksmuseum | Single Page Web App
+<!-- Description  -->
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
 
-<!-- ☝️ replace this description with a description of your own work -->
+![Screenshot van Singe Page Web App]()
 
-<!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
+## :card_file_box:Table of contents
 
-<!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
+* [User story](#busts_in_silhouetteuser-story)
+* [Features](#sparklesfeatures)
+* [Install and Run the project](#rocketinstall-and-run-the-project)
+* [API](#bulbapi)
+* [Documentation](#memodocumentation)
+* [Author](#technologistauthor)
+* [License](#page_facing_uplicense)
 
-<!-- Maybe a table of contents here? 📚 -->
+## :busts_in_silhouette:User story
 
-<!-- How about a section that describes how to install this project? 🤓 -->
+As an art lover, I want to be able to search and view art from the Rijksmuseum at home so that I can enjoy art at all times.
 
-<!-- ...but how does one use this project? What are its features 🤔 -->
+## :sparkles:Features
 
+- [ ] Overview of different artworks
+- [ ] Search bar for searching artworks based on object number, title of artwork or artist
+<!-- - [x] als feature in de website is toegepast -->
+
+## :rocket:Install and Run the project
+
+<!-- To use this app, you will have to clone this repo. You can do this by typing the following command in your terminal:
+
+```
+git clone https://github.com/PipHarsveld/rijksmuseum
+```
+
+Congrats, you are now all set! Go to localhost:3000 in your browser and enjoy! -->
+
+## :bulb:Api
 <!-- What external data source is featured in your project and what are its properties 🌠 -->
 
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
+## :memo:Documentation
 
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+For further documentation of the process, see the [wiki](https://github.com/PipHarsveld/rijksmuseum/wiki) of this repository
 
-## Inhoudsopgave
+## :technologist:Author
 
-## Beschrijving
+This project is designed and created by [Pip Harsveld](https://github.com/PipHarsveld).
 
-## Kenmerken
+## :page_facing_up:License
 
-## Bronnen
-
-## Licentie
+Copyright © 2022 Pip Harsveld.<br>
+This project is [MIT](https://github.com/PipHarsveld/rijksmuseum/blob/main/LICENSE) licensed.
