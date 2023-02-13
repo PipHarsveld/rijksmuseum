@@ -47,5 +47,5 @@ This project is designed and created by [Pip Harsveld](https://github.com/PipHar
 
 ## :page_facing_up:License
 
-Copyright © 2022 Pip Harsveld.<br>
+Copyright © 2023 Pip Harsveld.<br>
 This project is [MIT](https://github.com/PipHarsveld/rijksmuseum/blob/main/LICENSE) licensed.
