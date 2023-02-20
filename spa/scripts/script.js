@@ -2,19 +2,26 @@ const display = document.querySelector('main');
 const apiKey = "RYeqgpSb";
 const url = "https://www.rijksmuseum.nl/api/nl/collection?key=" + apiKey;
 
+// Define an asynchronous function to load the art objects
 async function loadArtObjects() {
     try {
+        // Use the fetch() method to make an API request to the Rijksmuseum API
         const response = await fetch(url);
+
+        // Parse the JSON response into a JavaScript object
         const json = await response.json();
+
+        // Extract the art objects from the JSON response
         const data = json.artObjects;
 
+        // Loop through each art object and create a new <figure> element
         data.forEach(function (artObject) {
-            // Create a new figure to hold the information for each art object
             const newFigure = document.createElement("figure");
 
             // Image
             const image = document.createElement("img");
             image.src = artObject.webImage.url;
+            // Append the <img> element to the <figure> element
             newFigure.appendChild(image);
 
             // Create a figcaption to hold the title and artist
@@ -41,4 +48,5 @@ async function loadArtObjects() {
     }
 }
 
+// Call the loadArtObjects() function to display the art objects
 loadArtObjects();
