@@ -51,16 +51,24 @@ async function loadArtObjects() {
             artist.textContent = artObject.principalOrFirstMaker;
             newFigure.appendChild(artist);
 
-            // // Create a section to hold the tags
-            // const tagContainer = document.createElement("section");
+            // Create a section to hold the tags
+            const tagContainer = document.createElement("ul");
+            const listItem = document.createElement("li");
 
-            // // Tags
-            // const artist = document.createElement("p");
-            // artist.textContent = artObject.principalOrFirstMaker;
-            // newFigure.appendChild(artist);
+            // Object Type
+            const objectType = document.createElement("p");
+            objectType.textContent = artObject.objectTypes; // WERKT NIET!!!!!!!!!
+            listItem.appendChild(objectType);
 
-            // // Append the tags section to the article
-            // newFigure.appendChild(tagContainer);
+            tagContainer.appendChild(listItem);
+
+            // Append the tags section to the article
+            newFigure.appendChild(tagContainer);
+
+            // Description
+            const description = document.createElement("p");
+            description.textContent = artObject.titles;  // WERKT NIET!!!!!!!!!
+            newFigure.appendChild(description);
 
             // Append the new figure to the display
             display.appendChild(newFigure);
