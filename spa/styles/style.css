@@ -29,50 +29,86 @@ svg {
     max-width: 100%;
 }
 
-ul, li {
-   margin:0;
-   padding: 0;
-   text-indent: 0;
-   list-style-type: none;
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    list-style-type: none;
 }
 
 /********/
 /* Root */
 /********/
-
+:root {
+    --background-color: #121212;
+    --accent-color: hotpink;
+    --text-color: #ffffff;
+    --font-paragraph: Arial, sans-serif;
+}
 
 /********************/
 /* Algemene styling */
 /********************/
 body {
-    background-color: blanchedalmond;
+    background-color: var(--background-color);
+    font-family: var(--font-paragraph);
+    color: var(--text-color);
 }
 
-header{
+
+
+/*******************/
+/* Header met logo */
+/*******************/
+header {
     display: flex;
     justify-content: center;
 }
 
-footer{
+header>h1>img {
+    margin: 2rem;
+}
+
+
+/************************/
+/* Main met kunstwerken */
+/************************/
+main {
+    display: flex;
+    overflow: scroll;
+}
+
+main>article {
+    width: 100vw;
+    padding: 2rem;
+    flex-shrink: 0;
+}
+
+
+/************************/
+/* Footer met navigatie */
+/************************/
+footer {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    background: hotpink;
+    background: var(--accent-color);
     height: 5rem;
 }
 
-footer > ul{
+footer>ul {
     display: flex;
     justify-content: space-evenly;
 }
 
-footer > ul > li{
+footer>ul>li {
     width: 30%;
     text-align: center;
 }
 
-footer > ul > li > button{
+footer>ul>li>button {
     background: none;
     color: inherit;
     border: none;
@@ -84,7 +120,7 @@ footer > ul > li > button{
     align-items: center;
 }
 
-footer > ul > li > button > img{
+footer>ul>li>button>img {
     width: 2.5rem;
     height: 2.5rem;
 }
