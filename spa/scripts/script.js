@@ -1,13 +1,14 @@
 const display = document.querySelector('main');
 const apiKey = "RYeqgpSb";
-const url = "https://www.rijksmuseum.nl/api/nl/collection?key=" + apiKey;
+const baseURL = "https://www.rijksmuseum.nl/api/nl/collection?key=" + apiKey;
 
 display.textContent = "Even geduld, de kunstobjecten worden geladen.";
 
 // Define an asynchronous function to load the art objects
-async function loadArtObjects() {
+async function loadArtObjects(objectType) {
     try {
         // Use the fetch() method to make an API request to the Rijksmuseum API
+        const url = baseURL + "&objecttype=" + objectType;
         const response = await fetch(url);
 
         if (response.status >= 200 && response.status <= 299) {
@@ -17,9 +18,8 @@ async function loadArtObjects() {
             // Extract the art objects from the JSON response
             const data = json.artObjects;
 
-            console.log(data)
-
-
+            // Remove loading state
+            display.textContent = "";
 
             // Loop through each art object
             data.forEach(async function (artObject) {
@@ -58,10 +58,6 @@ async function loadArtObjects() {
                 display.appendChild(newFigure);
             });
 
-            // Remove loading state
-            display.textContent = "";
-
-
         } else {
             throw Error(response.statusText);
         }
@@ -72,7 +68,25 @@ async function loadArtObjects() {
 
 }
 
+// Handle changes to the URL hash
+window.addEventListener('hashchange', () => {
+    // Get the current hash value
+    const hash = window.location.hash.slice(1);
 
+    // Clear the display
+    display.textContent = "";
+
+    // Load the appropriate art objects based on the hash
+    if (hash === "schilderijen") {
+        display.textContent = "Even geduld, de schilderijen worden geladen.";
+        loadArtObjects("schilderij");
+    } else if (hash === "sculpturen") {
+        display.textContent = "Even geduld, de sculpturen worden geladen.";
+        loadArtObjects("sculptuur");
+    } else {
+        display.textContent = "Ongeldige hash: " + hash;
+    }
+});
 
 // Call the loadArtObjects() function to display the art objects
 loadArtObjects();
