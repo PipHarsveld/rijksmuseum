@@ -3,6 +3,7 @@ const apiKey = "RYeqgpSb";
 const baseURL = "https://www.rijksmuseum.nl/api/nl/collection?key=" + apiKey;
 
 display.textContent = "Even geduld, de kunstobjecten worden geladen.";
+checkHash();
 
 // Define an asynchronous function to load the art objects
 async function loadArtObjects(objectType) {
@@ -68,8 +69,34 @@ async function loadArtObjects(objectType) {
 
 }
 
-// Handle changes to the URL hash
-window.addEventListener('hashchange', () => {
+var btnAllArt = document.querySelector("footer>ul>li:nth-of-type(1)>button");
+btnAllArt.addEventListener('click', () => {
+    window.location.hash = "";
+    checkHash();
+});
+
+var btnPaintings = document.querySelector("footer>ul>li:nth-of-type(2)>button");
+btnPaintings.addEventListener('click', () => {
+    window.location.hash = "schilderijen";
+    checkHash();
+});
+
+var btnSculptures = document.querySelector("footer>ul>li:nth-of-type(3)>button");
+btnSculptures.addEventListener('click', () => {
+    window.location.hash = "sculpturen";
+    checkHash();
+});
+
+var btnSearch = document.querySelector("footer>ul>li:nth-of-type(4)>button");
+btnSearch.addEventListener('click', () => {
+    window.location.hash = "zoeken";
+    checkHash();
+});
+
+
+
+async function checkHash() {
+
     // Get the current hash value
     const hash = window.location.hash.slice(1);
 
@@ -77,17 +104,28 @@ window.addEventListener('hashchange', () => {
     display.textContent = "";
 
     // Load the appropriate art objects based on the hash
-    if (hash === "schilderijen") {
+    if (hash === "") {
+        display.textContent = "Even geduld, de kunstwerken worden geladen.";
+        await loadArtObjects();
+    } else if (hash === "schilderijen") {
         display.textContent = "Even geduld, de schilderijen worden geladen.";
-        loadArtObjects("schilderij");
+        await loadArtObjects("schilderij");
     } else if (hash === "sculpturen") {
         display.textContent = "Even geduld, de sculpturen worden geladen.";
-        loadArtObjects("sculptuur");
+        await loadArtObjects("sculptuur");
+    } else if (hash === "zoeken") {
+        display.textContent = "Even geduld, u kunt zo zoeken";
+        // Load the search bar page
+        display.innerHTML = `
+            <h2>Zoek Kunstwerken</h2>
+            <form id="search-form">
+            <label for="search-input">Zoekterm:</label>
+            <input type="text" id="search-input" name="search-input">
+            <button type="submit">Zoeken</button>
+            </form>
+        `;
     } else {
         display.textContent = "Ongeldige hash: " + hash;
     }
-});
-
-// Call the loadArtObjects() function to display the art objects
-loadArtObjects();
+}
 
