@@ -11,8 +11,8 @@
     margin: 0;
 }
 
-html,
-body {
+html, body {
+    overflow: auto;
     height: 100%;
 }
 
@@ -42,7 +42,7 @@ li {
 /********/
 :root {
     --background-color: #121212;
-    --accent-color: hotpink;
+    /* --accent-color: hotpink; */
     --text-color: #ffffff;
     --font-paragraph: Arial, sans-serif;
 }
@@ -51,9 +51,21 @@ li {
 /* Algemene styling */
 /********************/
 body {
-    background-color: var(--background-color);
+    /* background-color: var(--background-color); */
     font-family: var(--font-paragraph);
     color: var(--text-color);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(30,19,12,1) 10%, rgba(154,132,120,0.8464635854341737) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+}
+
+h2{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
 }
 
 p{
@@ -97,6 +109,7 @@ main>article {
 
 main>article>img{
     margin-bottom: 2rem;
+    max-height: 20rem;
 }
 
 /* Eerste letter tag met hoofdletter */
@@ -117,7 +130,6 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    background: var(--accent-color);
     height: 5rem;
 }
 
