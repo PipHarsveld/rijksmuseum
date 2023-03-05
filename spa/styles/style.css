@@ -56,6 +56,10 @@ body {
     color: var(--text-color);
 }
 
+p{
+    text-align: center;
+}
+
 
 
 /*******************/
@@ -88,6 +92,20 @@ main>article {
     flex-direction: column;
     align-items: center;
     scroll-snap-align: center;
+    margin-bottom: 4rem;
+}
+
+main>article>img{
+    margin-bottom: 2rem;
+}
+
+/* Eerste letter tag met hoofdletter */
+main>article>ul>li>p:first-letter {
+    text-transform: uppercase;
+}
+
+main>article>p{
+    margin-top: 1rem;
 }
 
 
@@ -106,6 +124,7 @@ footer {
 footer>ul {
     display: flex;
     justify-content: space-evenly;
+    height: 100%;
 }
 
 footer>ul>li {
@@ -113,8 +132,12 @@ footer>ul>li {
     text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
+
+footer>ul>li:hover{
+    background-color: pink;
+}
+
 
 footer>ul>li>button {
     background: none;
@@ -126,6 +149,7 @@ footer>ul>li>button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 footer>ul>li>button>img {
