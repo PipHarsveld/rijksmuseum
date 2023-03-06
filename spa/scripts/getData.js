@@ -1,9 +1,10 @@
-const apiKey = "RYeqgpSb";
-const baseURL = "https://www.rijksmuseum.nl/api/nl/collection?key=" + apiKey;
+import CONFIG from './config.js';
 
-async function getData(objectType) {
+async function getData() {
   try {
-    const url = baseURL + "&objecttype=" + objectType;
+    // const url = `${CONFIG.baseURL}?key=${CONFIG.apiKey}&objecttype=${objectType}`;
+    const url = `${CONFIG.baseURL}?key=${CONFIG.apiKey}`;
+
     const response = await fetch(url);
 
     if (response.status >= 200 && response.status <= 299) {
@@ -11,7 +12,7 @@ async function getData(objectType) {
       const data = json.artObjects;
       return data;
     } else {
-      throw Error(response.statusText);
+      return "error";
     }
   } catch (error) {
     console.log(error);
