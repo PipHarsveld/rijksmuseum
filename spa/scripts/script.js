@@ -9,7 +9,7 @@
 // async function loadArtObjects(objectType) {
 //     try {
 //         // Use the fetch() method to make an API request to the Rijksmuseum API
-//         const url = baseURL + "&objecttype=" + objectType;
+//         const url = baseURL + "&s=" + objectType;
 //         const response = await fetch(url);
 
 //         if (response.status >= 200 && response.status <= 299) {
@@ -105,14 +105,14 @@
 
 
 
-import { getData } from './getData.js';
-import { render } from './render.js';
-import { router } from './router.js';
+import getData from './getData.js';
+import render from './render.js';
+import router from './router.js';
 
-async function init() {
+async function loadPage() {
   const data = await getData();
-  render(data);
-  router();
+//   render(data);
+  router(data);
 }
 
-init();
+loadPage();
