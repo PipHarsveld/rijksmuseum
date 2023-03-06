@@ -6,10 +6,12 @@ function render(data) {
   display.textContent = "";
 
   if(data === "error") {
-    // doe meuk
+    // doe dingen
     console.log('pure paniek gap');
     return false;
   }
+
+//   data = JSON.parse(data);
 
   data.forEach(async function (artObject) {
     const url = "https://www.rijksmuseum.nl/api/nl/collection/" + artObject.objectNumber + "?key=" + CONFIG.apiKey;

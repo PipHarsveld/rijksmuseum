@@ -1,4 +1,5 @@
 import getData from "./getData.js";
+import CONFIG from './config.js';
 import render from "./render.js";
 
 function router(data) {
@@ -14,9 +15,13 @@ function router(data) {
         },
         'schilderijen': () => {
             display.textContent = "Even geduld, de schilderijen worden geladen.";
-            getData().then(data => {
-                render(data)
-            })
+            const url = `${CONFIG.baseURL}?key=${CONFIG.apiKey}&s=schilderijen`;
+            const data = fetch(url)
+                .then((response) => response.json())
+                .then((data) => {
+                    render(data)
+                })
+                .catch((err) => console.log(err));
         },
         'sculpturen': () => {
             display.textContent = "Even geduld, de sculpturen worden geladen.";
@@ -29,18 +34,18 @@ function router(data) {
             getData().then(data => {
                 display.textContent = "Even geduld, u kunt zo zoeken";
                 display.innerHTML = `
-                    <h2>Zoek Kunstwerken</h2>
-                    <form id="search-form">
-                    <label for="search-input">Zoekterm:</label>
-                    <input type="text" id="search-input" name="search-input">
-                    <button type="submit">Zoeken</button>
-                    </form>
+                    <div class="zoekpagina">
+                        <h2>Zoek Kunstwerken</h2>
+                        <form id="search-form">
+                            <label for="search-input">Zoekterm:</label>
+                            <input type="text" id="search-input" name="search-input">
+                            <button type="submit">Zoeken</button>
+                        </form>
+                    </div>
                 `;
             })
         }
     });
-
-
 
     // if (hash === "") {
     //     display.textContent = "Even geduld, de kunstwerken worden geladen.";
@@ -68,6 +73,23 @@ function router(data) {
     // }
 }
 
+
+// function test(){
+//     const url = `${CONFIG.baseURL}?key=${CONFIG.apiKey}&s=schilderijen`;
+//     const data = fetch(url)
+//     .then((response) => response.json())
+//     .then((data) => {
+//         render(data)
+//     })
+//     .catch((err) => console.log(err));
+
+//     // const response = fetch(url);
+
+//     // const json = response.json();
+//     // const data = json.artObjects;
+
+//     return data;
+// }
 
 window.addEventListener('hashchange', router);
 
