@@ -1,9 +1,18 @@
+import CONFIG from './config.js';
+
 const display = document.querySelector('main');
 
 function render(data) {
   display.textContent = "";
+
+  if(data === "error") {
+    // doe meuk
+    console.log('pure paniek gap');
+    return false;
+  }
+
   data.forEach(async function (artObject) {
-    const url = "https://www.rijksmuseum.nl/api/nl/collection/" + artObject.objectNumber + "?key=" + apiKey;
+    const url = "https://www.rijksmuseum.nl/api/nl/collection/" + artObject.objectNumber + "?key=" + CONFIG.apiKey;
 
     const response = await fetch(url)
     const json = await response.json();
