@@ -1,6 +1,8 @@
-import getData from "./getData.js";
+// import getData from "./getData.js";
 import CONFIG from './config.js';
 import render from "./render.js";
+import api from "./api.js";
+import "./routie.js";
 
 function router(data) {
     // const hash = window.location.hash.slice(1);
@@ -9,19 +11,28 @@ function router(data) {
     routie({
         '': () => {
             display.textContent = "Even geduld, de kunstwerken worden geladen.";
-            getData().then(data => {
+            api.getAllArtworks().then(data => {
+                console.log(data)
                 render(data)
+                console.log("de boosdoener")
             })
+            // getData().then(data => {
+            //     render(data)
+            //     console.log("de boosdoener")
+            // })
         },
         'schilderijen': () => {
             display.textContent = "Even geduld, de schilderijen worden geladen.";
-            const url = `${CONFIG.baseURL}?key=${CONFIG.apiKey}&s=schilderijen`;
-            const data = fetch(url)
-                .then((response) => response.json())
-                .then((data) => {
-                    render(data)
-                })
-                .catch((err) => console.log(err));
+            api.getPaintings();
+
+            // const url = `${CONFIG.baseURL}?key=${CONFIG.apiKey}&s=schilderijen`;
+            // const data = fetch(url)
+            //     .then((response) => response.json())
+            //     .then((data) => {
+            //         render(data)
+            //         console.log("schilderijen")
+            //     })
+            //     .catch((err) => console.log(err));
         },
         'sculpturen': () => {
             display.textContent = "Even geduld, de sculpturen worden geladen.";

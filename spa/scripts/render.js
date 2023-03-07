@@ -1,4 +1,5 @@
 import CONFIG from './config.js';
+import api from "./api.js"
 
 const display = document.querySelector('main');
 
@@ -12,12 +13,11 @@ function render(data) {
   }
 
 //   data = JSON.parse(data);
+console.log(data);
 
   data.forEach(async function (artObject) {
-    const url = "https://www.rijksmuseum.nl/api/nl/collection/" + artObject.objectNumber + "?key=" + CONFIG.apiKey;
-
-    const response = await fetch(url)
-    const json = await response.json();
+    console.log(artObject.objectNumber)
+    api.getDetails(artObject.objectNumber);
 
     const newFigure = document.createElement("article");
     const image = document.createElement("img");
@@ -31,8 +31,8 @@ function render(data) {
     image.src = artObject.webImage.url;
     title.textContent = artObject.title;
     artist.textContent = artObject.principalOrFirstMaker;
-    objectType.textContent = json.artObject.objectTypes;
-    description.textContent = json.artObject.titles;
+    objectType.textContent = artObject.objectTypes;
+    description.textContent = artObject.titles;
 
     newFigure.appendChild(image);
     newFigure.appendChild(title);

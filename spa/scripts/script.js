@@ -106,13 +106,15 @@
 
 
 import getData from './getData.js';
+import api from './api.js';
 import render from './render.js';
 import router from './router.js';
 
 async function loadPage() {
-  const data = await getData();
+    console.log("aaaa")
+//   const data = await api.getAllArtworks();
 //   render(data);
-  router(data);
+  router();
 }
 
 loadPage();
