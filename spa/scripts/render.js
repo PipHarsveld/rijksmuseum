@@ -53,14 +53,13 @@ function renderOnboarding(data) {
   } else {
     const container = document.createElement("section");
     const welcomeText = document.createElement("h2");
-    const introduction = document.createElement("p");
     const explanationSwiping = document.createElement("p");
     const explanationIcons = document.createElement("p");
     const explanationSearch = document.createElement("p");
     const buttonNext = document.createElement("a");
 
+    container.className = "onboardingPage";
     welcomeText.textContent = "Welkom bij de app van het Rijksmuseum!";
-    introduction.textContent = "Hier kun je alle kunst van het Rijksmuseum bekijken vanuit je luie stoel!";
     explanationSwiping.textContent = "Op de homepagina vind je verschillende kunstwerken, die je kunt bewonderen door naar links te swipen. Op die manier scroll je door alle kunstwerken heen.";
     explanationIcons.textContent = "Zin om alleen naar schilderijen te kijken? Klik dan op het tweede icoontje onderin met de schilderijenlijst. Meer zin in sculpturen? Ook dat kan! Deze vind je via het derde icoontje met het beeldhouwwerk.";
     explanationSearch.textContent = "Mocht je opzoek zijn naar een specifiek kunstwerk, dan kun je via het vierde icoontje (het vergrootglas) naar de zoekpagina gaan.";
@@ -70,7 +69,6 @@ function renderOnboarding(data) {
     display.appendChild(container);
 
     container.appendChild(welcomeText);
-    container.appendChild(introduction);
     container.appendChild(explanationSwiping);
     container.appendChild(explanationIcons);
     container.appendChild(explanationSearch);
