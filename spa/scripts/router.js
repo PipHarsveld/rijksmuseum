@@ -1,52 +1,41 @@
-// import getData from "./getData.js";
-import CONFIG from './config.js';
 import render from "./render.js";
 import api from "./api.js";
-import "./routie.js";
 
 function router(data) {
-    // const hash = window.location.hash.slice(1);
+    const hash = window.location.hash.slice(1);
     const display = document.querySelector('main');
 
-    routie({
-        '': () => {
+    switch(hash){
+        case "": 
+            console.log("home");
             display.textContent = "Even geduld, de kunstwerken worden geladen.";
             api.getAllArtworks().then(data => {
-                console.log(data)
-                render(data)
-                console.log("de boosdoener")
+                console.log(data);
+                render(data);
+                console.log("loaded all artworks");
             })
-            // getData().then(data => {
-            //     render(data)
-            //     console.log("de boosdoener")
-            // })
-        },
-        'schilderijen': () => {
+            break;
+        case "schilderijen":
+            console.log("schilderijen")
             display.textContent = "Even geduld, de schilderijen worden geladen.";
-            api.getSpecificArtworks().then(data => {
-                console.log(data)
-                render(data)
-                console.log("de boosdoener")
+            api.getSpecificArtworks("schilderij").then(data => {
+                console.log(data);
+                render(data);
+                console.log("loaded paintings");
             })
-            // const url = `${CONFIG.baseURL}?key=${CONFIG.apiKey}&s=schilderijen`;
-            // const data = fetch(url)
-            //     .then((response) => response.json())
-            //     .then((data) => {
-            //         render(data)
-            //         console.log("schilderijen")
-            //     })
-            //     .catch((err) => console.log(err));
-        },
-        'sculpturen': () => {
+            break;
+        case "sculpturen":
+            console.log("sculpturen")
             display.textContent = "Even geduld, de sculpturen worden geladen.";
-            getData().then(data => {
-                render(data)
+            api.getSpecificArtworks("beeldhouwwerk").then(data => {
+                console.log(data);
+                render(data);
+                console.log("loaded sculptures");
             })
-        },
-        'zoeken': () => {
-            display.textContent = "Even geduld, de sculpturen worden geladen.";
-            getData().then(data => {
-                display.textContent = "Even geduld, u kunt zo zoeken";
+        break;
+        case "zoeken":
+            display.textContent = "Even geduld, u kunt zo zoeken";
+            api.getAllArtworks().then(data => {
                 display.innerHTML = `
                     <div class="zoekpagina">
                         <h2>Zoek Kunstwerken</h2>
@@ -58,8 +47,13 @@ function router(data) {
                     </div>
                 `;
             })
+            break;
+        default:
+            console.log("error");
         }
-    });
+    };
+
+    
 
     // if (hash === "") {
     //     display.textContent = "Even geduld, de kunstwerken worden geladen.";
@@ -85,7 +79,7 @@ function router(data) {
     // else {
     //     display.textContent = "Ongeldige hash: " + hash;
     // }
-}
+
 
 
 // function test(){
