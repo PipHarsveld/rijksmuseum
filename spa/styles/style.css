@@ -41,9 +41,13 @@ li {
 /* Root */
 /********/
 :root {
-    --background-color: #121212;
-    /* --accent-color: hotpink; */
+    --background-gradient: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(30,19,12,1) 10%, rgba(154,132,120,0.8464635854341737) 100%);
+    
+    --background-color-footer: #9C8C81;
+    --hover-color-footer: #907F76;
     --text-color: #ffffff;
+
+
     --font-paragraph: Arial, sans-serif;
 }
 
@@ -51,24 +55,15 @@ li {
 /* Algemene styling */
 /********************/
 body {
-    /* background-color: var(--background-color); */
     font-family: var(--font-paragraph);
     color: var(--text-color);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(30,19,12,1) 10%, rgba(154,132,120,0.8464635854341737) 100%);
+    background: var(--background-gradient);
     background-size: cover;
     background-repeat: no-repeat;
     background-clip: content-box;
 }
 
-h2{
-    text-align: center;
-}
-
-h3{
-    text-align: center;
-}
-
-p{
+h3, h2, p{
     text-align: center;
 }
 
@@ -137,6 +132,8 @@ footer>ul {
     display: flex;
     justify-content: space-evenly;
     height: 100%;
+    box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
+    background-color: var(--background-color-footer);
 }
 
 footer>ul>li {
@@ -144,10 +141,11 @@ footer>ul>li {
     text-align: center;
     display: flex;
     justify-content: center;
-}
+    border-top-right-radius: 15%;
+    border-top-left-radius: 15%;}
 
 footer>ul>li:hover{
-    background-color: pink;
+    background-color: var(--hover-color-footer);
 }
 
 
