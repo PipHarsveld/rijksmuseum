@@ -120,7 +120,7 @@ main>article>p{
 /************************/
 /* Footer met navigatie */
 /************************/
-footer {
+footer>nav {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -128,7 +128,7 @@ footer {
     height: 5rem;
 }
 
-footer>ul {
+footer>nav>ul {
     display: flex;
     justify-content: space-evenly;
     height: 100%;
@@ -136,7 +136,7 @@ footer>ul {
     background-color: var(--background-color-footer);
 }
 
-footer>ul>li {
+footer>nav>ul>li {
     width: 30%;
     text-align: center;
     display: flex;
@@ -144,12 +144,12 @@ footer>ul>li {
     border-top-right-radius: 15%;
     border-top-left-radius: 15%;}
 
-footer>ul>li:hover{
+footer>nav>ul>li:hover{
     background-color: var(--hover-color-footer);
 }
 
 
-footer>ul>li>a {
+footer>nav>ul>li>a {
     background: none;
     color: inherit;
     border: none;
@@ -164,7 +164,7 @@ footer>ul>li>a {
     height: 100%;
 }
 
-footer>ul>li>a>img {
+footer>nav>ul>li>a>img {
     width: 2.5rem;
     height: 2.5rem;
 }
