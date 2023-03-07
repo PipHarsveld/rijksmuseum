@@ -1,4 +1,3 @@
-import CONFIG from './config.js';
 import api from "./api.js"
 
 const display = document.querySelector('main');
@@ -11,9 +10,6 @@ function render(data) {
     console.log('pure paniek gap');
     return false;
   }
-
-//   data = JSON.parse(data);
-console.log(data);
 
   data.forEach(async function (artObject) {
     console.log(artObject.objectNumber)
