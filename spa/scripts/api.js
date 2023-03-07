@@ -42,7 +42,7 @@ async function getAllArtworks() {
 async function getSpecificArtworks(objectType) {
     try {
         console.log("GETTING PAINTINGS")
-        const url = `${CONFIG.baseURL}?key=${CONFIG.apiKey}&s=${objectType}`;
+        const url = `${CONFIG.baseURL}?key=${CONFIG.apiKey}&type=${objectType}`;
 
         const response = await fetch(url);
 
