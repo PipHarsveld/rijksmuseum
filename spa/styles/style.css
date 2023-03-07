@@ -117,6 +117,39 @@ main>article>p{
 }
 
 
+
+/*******************/
+/* Onboarding page */
+/*******************/
+.onboardingPage{
+    padding: 0 2rem;
+}
+
+.onboardingPage>h2, .onboardingPage>p{
+    margin-top: 1.5rem;
+}
+
+.onboardingPage>a{
+    display: block;
+    margin: auto;
+    margin-top: 3.5rem;
+    border-radius: 4px;
+    background-color: rgba(30,19,12,1);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: 700;
+    padding: .5rem;
+    width: 15rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.onboardingPage>a:focus{
+    border: .2rem solid #ffffff;
+    outline: none;
+}
+
 /************************/
 /* Footer met navigatie */
 /************************/
