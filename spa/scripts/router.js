@@ -23,8 +23,11 @@ function router(data) {
         },
         'schilderijen': () => {
             display.textContent = "Even geduld, de schilderijen worden geladen.";
-            api.getPaintings();
-
+            api.getSpecificArtworks().then(data => {
+                console.log(data)
+                render(data)
+                console.log("de boosdoener")
+            })
             // const url = `${CONFIG.baseURL}?key=${CONFIG.apiKey}&s=schilderijen`;
             // const data = fetch(url)
             //     .then((response) => response.json())
