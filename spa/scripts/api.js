@@ -9,7 +9,8 @@ async function getDetails(objectNumber) {
 
         if (response.status >= 200 && response.status <= 299) {
             const json = await response.json();
-            const data = json.artObjects;
+            const data = json.artObject;
+            console.log(data);
             return data;
         } else {
             return "error";
