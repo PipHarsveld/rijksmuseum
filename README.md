@@ -1,8 +1,7 @@
 # :art:Rijksmuseum | Single Page Web App
-<!-- Description  -->
+The web application is a Single Page Application (SPA) that allows users to search for and view artwork from the Rijksmuseum in Amsterdam, Netherlands.
 
-
-![Screenshot van Singe Page Web App]()
+![Screenshot van Singe Page Web App](./spa/images/Flow%20WAFS.jpg)
 
 ## :card_file_box:Table of contents
 
@@ -20,23 +19,21 @@ As an art lover, I want to be able to search and view art from the Rijksmuseum a
 
 ## :sparkles:Features
 
-- [ ] Overview of different artworks
+- [X] Overview of different artworks
 - [ ] Search bar for searching artworks based on object number, title of artwork or artist
-<!-- - [x] als feature in de website is toegepast -->
 
 ## :rocket:Install and Run the project
 
-<!-- To use this app, you will have to clone this repo. You can do this by typing the following command in your terminal:
+To use this app, you will have to clone this repo. You can do this by typing the following command in your terminal:
 
 ```
 git clone https://github.com/PipHarsveld/rijksmuseum
 ```
 
-Congrats, you are now all set! Go to localhost:3000 in your browser and enjoy! -->
+Congrats, you are now all set! Go to localhost:3000 in your browser and enjoy!
 
 ## :bulb:Api
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
-
+I jused the Rijksmuseum API for this project and before I started, I did some research to the API. The research can be found in [the wiki](https://github.com/PipHarsveld/rijksmuseum/wiki/Analyseren).
 ## :memo:Documentation
 
 For further documentation of the process, see the [wiki](https://github.com/PipHarsveld/rijksmuseum/wiki) of this repository
