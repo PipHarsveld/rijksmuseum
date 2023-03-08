@@ -1,3 +1,18 @@
+import router from './router.js';
+
+async function loadPage() {
+  console.log("Load the page")
+  router();
+}
+
+loadPage();
+
+
+
+
+
+
+
 // const display = document.querySelector('main');
 // const apiKey = "RYeqgpSb";
 // const baseURL = "https://www.rijksmuseum.nl/api/nl/collection?key=" + apiKey;
@@ -102,14 +117,3 @@
 //         display.textContent = "Ongeldige hash: " + hash;
 //     }
 // }
-
-
-
-import router from './router.js';
-
-async function loadPage() {
-  console.log("Load the page")
-  router();
-}
-
-loadPage();
