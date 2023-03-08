@@ -11,10 +11,7 @@ function render(data) {
     return false;
   } else {
     data.forEach(async function (artObject) {
-      console.log(artObject.objectNumber);
-      api.getDetails(artObject.objectNumber);
-      console.log(artObject.description);
-
+      const details = await api.getDetails(artObject.objectNumber);
       const newFigure = document.createElement("article");
       const image = document.createElement("img");
       const title = document.createElement("h2");
@@ -27,8 +24,8 @@ function render(data) {
       image.src = artObject.webImage.url;
       title.textContent = artObject.title;
       artist.textContent = artObject.principalOrFirstMaker;
-      objectType.textContent = artObject.objectTypes;
-      description.textContent = artObject.description;
+      objectType.textContent = details.objectTypes;
+      description.textContent = details.plaqueDescriptionDutch;
 
       newFigure.appendChild(image);
       newFigure.appendChild(title);
