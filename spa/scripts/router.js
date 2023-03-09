@@ -30,7 +30,6 @@ function router() {
             break;
         case "zoeken":
             display.textContent = "Even geduld, u kunt zo zoeken";
-            api.getAllArtworks().then(data => {
                 display.innerHTML = `
                     <div class="zoekpagina">
                         <h2>Zoek Kunstwerken</h2>
@@ -41,7 +40,6 @@ function router() {
                         </form>
                     </div>
                 `;
-            })
             break;
         default:
     }
