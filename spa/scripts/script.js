@@ -1,7 +1,6 @@
 import router from './router.js';
 
 async function loadPage() {
-  console.log("Load the page")
   router();
 }
 

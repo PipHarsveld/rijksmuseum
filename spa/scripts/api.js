@@ -2,15 +2,12 @@ import CONFIG from './config.js';
 
 async function getDetails(objectNumber) {
     try {
-        console.log("GETTING DETAILS")
         const url = "https://www.rijksmuseum.nl/api/nl/collection/" + objectNumber + "?key=" + CONFIG.apiKey;
-
         const response = await fetch(url);
 
         if (response.status >= 200 && response.status <= 299) {
             const json = await response.json();
             const data = json.artObject;
-            console.log(data);
             return data;
         } else {
             return "error";
@@ -23,9 +20,7 @@ async function getDetails(objectNumber) {
 
 async function getAllArtworks() {
     try {
-        console.log("GETTING ALL ARTWORKS")
         const url = `${CONFIG.baseURL}?key=${CONFIG.apiKey}`;
-
         const response = await fetch(url);
 
         if (response.status >= 200 && response.status <= 299) {
@@ -42,9 +37,7 @@ async function getAllArtworks() {
 
 async function getSpecificArtworks(objectType) {
     try {
-        console.log("GETTING PAINTINGS")
         const url = `${CONFIG.baseURL}?key=${CONFIG.apiKey}&type=${objectType}`;
-
         const response = await fetch(url);
 
         if (response.status >= 200 && response.status <= 299) {
@@ -58,8 +51,6 @@ async function getSpecificArtworks(objectType) {
         console.log(error);
     }
 }
-
-
 
 
 export default {

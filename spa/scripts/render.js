@@ -6,8 +6,7 @@ function render(data) {
   display.textContent = "";
 
   if (data === "error") {
-    // doe dingen
-    console.log('pure paniek gap');
+    display.textContent = "Oeps! Er is iets foutgegaan. Laad de pagina opnieuw.";
     return false;
   } else {
     data.forEach(async function (artObject) {
@@ -44,8 +43,7 @@ function renderOnboarding(data) {
   display.textContent = "";
 
   if (data === "error") {
-    // doe dingen
-    console.log('pure paniek gap');
+    display.textContent = "Oeps! Er is iets foutgegaan. Laad de pagina opnieuw.";
     return false;
   } else {
     const container = document.createElement("section");
