@@ -1,15 +1,20 @@
+// Import modules
 import api from "./api.js"
 
 const display = document.querySelector('main');
 
 function render(data) {
+  // Remove loading states
   display.textContent = "";
 
   if (data === "error") {
     display.textContent = "Oeps! Er is iets foutgegaan. Laad de pagina opnieuw.";
     return false;
   } else {
+    // Create for each artobject that is found the following html
     data.forEach(async function (artObject) {
+
+      // Create variables with html tags
       const details = await api.getDetails(artObject.objectNumber);
       const newFigure = document.createElement("article");
       const image = document.createElement("img");
@@ -20,12 +25,14 @@ function render(data) {
       const objectType = document.createElement("p");
       const description = document.createElement("p");
 
+      // Add value to the variables
       image.src = artObject.webImage.url;
       title.textContent = artObject.title;
       artist.textContent = artObject.principalOrFirstMaker;
       objectType.textContent = details.objectTypes;
       description.textContent = details.plaqueDescriptionDutch;
 
+      // Show the variables to create html
       newFigure.appendChild(image);
       newFigure.appendChild(title);
       newFigure.appendChild(artist);
@@ -33,7 +40,6 @@ function render(data) {
       tagContainer.appendChild(listItem);
       newFigure.appendChild(tagContainer);
       newFigure.appendChild(description);
-
       display.appendChild(newFigure);
     });
   }
@@ -46,6 +52,7 @@ function renderOnboarding(data) {
     display.textContent = "Oeps! Er is iets foutgegaan. Laad de pagina opnieuw.";
     return false;
   } else {
+    // Create variables with html tags
     const container = document.createElement("section");
     const welcomeText = document.createElement("h2");
     const explanationSwiping = document.createElement("p");
@@ -53,6 +60,7 @@ function renderOnboarding(data) {
     const explanationSearch = document.createElement("p");
     const buttonNext = document.createElement("a");
 
+    // Add value to the variables
     container.className = "onboardingPage";
     welcomeText.textContent = "Welkom bij de app van het Rijksmuseum!";
     explanationSwiping.textContent = "Op de homepagina vind je verschillende kunstwerken, die je kunt bewonderen door naar links te swipen. Op die manier scroll je door alle kunstwerken heen.";
@@ -61,8 +69,8 @@ function renderOnboarding(data) {
     buttonNext.href = "#home";
     buttonNext.textContent = "Bekijk de kunst";
 
+    // Show the variables to create html
     display.appendChild(container);
-
     container.appendChild(welcomeText);
     container.appendChild(explanationSwiping);
     container.appendChild(explanationIcons);
@@ -71,6 +79,7 @@ function renderOnboarding(data) {
   }
 }
 
+//Export modules
 export default {
   render,
   renderOnboarding

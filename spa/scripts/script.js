@@ -1,3 +1,4 @@
+// Import modules
 import router from './router.js';
 
 async function loadPage() {
