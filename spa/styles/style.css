@@ -11,7 +11,8 @@
     margin: 0;
 }
 
-html, body {
+html,
+body {
     overflow: auto;
     height: 100%;
 }
@@ -37,12 +38,15 @@ li {
     list-style-type: none;
 }
 
+
+
+
 /********/
 /* Root */
 /********/
 :root {
-    --background-gradient: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(30,19,12,1) 10%, rgba(154,132,120,0.8464635854341737) 100%);
-    
+    --background-gradient: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(30, 19, 12, 1) 10%, rgba(154, 132, 120, 0.8464635854341737) 100%);
+
     --background-color-footer: #9C8C81;
     --hover-color-footer: #907F76;
     --text-color: #ffffff;
@@ -50,6 +54,9 @@ li {
 
     --font-paragraph: Arial, sans-serif;
 }
+
+
+
 
 /********************/
 /* Algemene styling */
@@ -63,7 +70,9 @@ body {
     background-clip: content-box;
 }
 
-h3, h2, p{
+h3,
+h2,
+p {
     text-align: center;
 }
 
@@ -79,7 +88,10 @@ header {
 
 header>h1>img {
     margin: 2rem auto;
+    width: 15rem;
 }
+
+
 
 
 /************************/
@@ -102,7 +114,7 @@ main>article {
     margin-bottom: 4rem;
 }
 
-main>article>img{
+main>article>img {
     margin-bottom: 2rem;
     max-height: 20rem;
 }
@@ -112,7 +124,7 @@ main>article>ul>li>p:first-letter {
     text-transform: uppercase;
 }
 
-main>article>p{
+main>article>p {
     margin-top: 1rem;
 }
 
@@ -121,20 +133,21 @@ main>article>p{
 /*******************/
 /* Onboarding page */
 /*******************/
-.onboardingPage{
+.onboardingPage {
     padding: 0 2rem;
 }
 
-.onboardingPage>h2, .onboardingPage>p{
+.onboardingPage>h2,
+.onboardingPage>p {
     margin-top: 1.5rem;
 }
 
-.onboardingPage>a{
+.onboardingPage>a {
     display: block;
     margin: auto;
     margin-top: 3.5rem;
     border-radius: 4px;
-    background-color: rgba(30,19,12,1);
+    background-color: rgba(30, 19, 12, 1);
     border: none;
     color: #FFFFFF;
     text-align: center;
@@ -145,10 +158,13 @@ main>article>p{
     text-decoration: none;
 }
 
-.onboardingPage>a:focus{
+.onboardingPage>a:focus {
     border: .2rem solid #ffffff;
     outline: none;
 }
+
+
+
 
 /************************/
 /* Footer met navigatie */
@@ -165,7 +181,7 @@ footer>nav>ul {
     display: flex;
     justify-content: space-evenly;
     height: 100%;
-    box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 31px 0px rgba(0, 0, 0, 0.75);
     background-color: var(--background-color-footer);
 }
 
@@ -175,9 +191,10 @@ footer>nav>ul>li {
     display: flex;
     justify-content: center;
     border-top-right-radius: 15%;
-    border-top-left-radius: 15%;}
+    border-top-left-radius: 15%;
+}
 
-footer>nav>ul>li:hover{
+footer>nav>ul>li:hover {
     background-color: var(--hover-color-footer);
 }
 
@@ -197,7 +214,7 @@ footer>nav>ul>li>a {
 }
 
 footer>nav>ul>li>a>img {
-    width: 6vh;
+    width: 5vh;
 }
 
 
@@ -207,8 +224,12 @@ footer>nav>ul>li>a>img {
 /*****************/
 /* Media queries */
 /*****************/
-@media (min-width: 800px){
-    main > article>img{
+@media (min-width: 800px) {
+    main>article>img {
         max-width: 35vw;
+    }
+
+    main>article>p{
+        max-width: 50%;
     }
 }

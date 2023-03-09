@@ -79,8 +79,25 @@ function renderOnboarding(data) {
   }
 }
 
+function renderSearch() {
+  display.textContent = "";
+  display.innerHTML = `
+    <div class="zoekpagina">
+        <h2>Zoek Kunstwerken</h2>
+        <form id="search-form">
+            <label for="search-input">Zoekterm:</label>
+            <input type="text" id="search-input" name="search-input">
+            <button type="submit">Zoeken</button>
+        </form>
+    </div>
+    `;
+
+}
+
+
 //Export modules
 export default {
   render,
-  renderOnboarding
+  renderOnboarding,
+  renderSearch
 }

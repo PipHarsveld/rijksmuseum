@@ -39,16 +39,7 @@ function router() {
         case "zoeken":
             display.textContent = "Even geduld, u kunt zo zoeken";
             //Create html search form
-            display.innerHTML = `
-                <div class="zoekpagina">
-                    <h2>Zoek Kunstwerken</h2>
-                    <form id="search-form">
-                        <label for="search-input">Zoekterm:</label>
-                        <input type="text" id="search-input" name="search-input">
-                        <button type="submit">Zoeken</button>
-                    </form>
-                </div>
-            `;
+            render.renderSearch();
             break;
         default:
     }
