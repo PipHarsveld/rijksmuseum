@@ -29,7 +29,7 @@ git clone https://github.com/PipHarsveld/rijksmuseum
 Congrats, you are now all set! Start your liveserver and enjoy!
 
 ## :bulb:Api
-I jused the Rijksmuseum API for this project and before I started, I did some research to the API. The research can be found in [the wiki](https://github.com/PipHarsveld/rijksmuseum/wiki/Analyseren).
+I used the Rijksmuseum API for this project and before I started, I did some research to the API. The research can be found in [the wiki](https://github.com/PipHarsveld/rijksmuseum/wiki/Analyseren).
 
 ## :memo:Documentation
 For further documentation of the process, see the [wiki](https://github.com/PipHarsveld/rijksmuseum/wiki) of this repository.
